@@ -1,31 +1,56 @@
-import React from "react";
-import axios from 'axios';
-import Config from '../../config';
+import React, { useState } from "react";
+import Link from "next/link";
+import DrawerToggle from "./sideDrawer/DrawerToggle";
 
-class MenuComponent extends React.Component {
-  state = { headerMenu: [] };
-
-  componentDidMount() {
-    axios
-      .get(`${Config.apiUrl}/menus/v1/menus/header-menu`)
-      .then(res =>
-        this.setState({
-          headerMenu: res.data,
-          loading: true
-        })
-      )
-      .catch(err => console.log(err))
-  }
-
-  render() {
-    return (
-      <div className="main-header">
-        Here will be menu
+export const TopMenu = ({ topMenu }) => {
+  return (
+    <div className="topMenu">
+      <div className="topMenuList">
+        {topMenu.items.map((item, ind) => {
+          return (
+            <Link key={ind} href={`/${item.slug}`}>
+              <a>{item.title}</a>
+            </Link>
+          );
+        })}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export const BotMenu = ({ botMenu, handler }) => {
+  return (
+    <div className="botMenu">
+      <div className="botMenuList">
+        {botMenu.items.map((item, ind) => {
+          return (
+            <Link key={ind} href={`/${item.slug}`}>
+              <a>{item.title}</a>
+            </Link>
+          );
+        })}
+      </div>
+      <DrawerToggle click={handler} />
+    </div>
+  );
+};
+
+const MenuComponent = ({ botMenu, topMenu, drawerClickHandler }) => {
+  return (
+    <div className="main-header">
+      <div className="logo">
+        <Link href="/">
+          <a>
+            <img src="images/mms.png" />
+          </a>
+        </Link>
+      </div>
+      <div className="menus">
+        <TopMenu topMenu={topMenu} />
+        <BotMenu botMenu={botMenu} handler={drawerClickHandler} />
+      </div>
+    </div>
+  );
+};
 
 export default MenuComponent;
-
-
