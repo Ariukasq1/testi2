@@ -1,9 +1,11 @@
 footer {
-  background: #eee;
+  background: #262626;
+  height: calc(100vh - 132px);
+  .copyright {
+    opacity: 0.9;
 
-  .copyright { 
-    opacity: .9;
-
-    img { width: 110px; }
+    img {
+      width: 110px;
+    }
   }
 }

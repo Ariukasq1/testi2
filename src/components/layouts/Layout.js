@@ -20,7 +20,7 @@ class Layout extends React.Component {
   };
 
   render() {
-    const { children, title, image, botMenu, topMenu } = this.props;
+    const { children, title, image, botMenu, topMenu, contact } = this.props;
     let sideDrawer;
     let backdrop;
     if (this.state.sideDrawerOpen) {
@@ -40,7 +40,7 @@ class Layout extends React.Component {
           {backdrop}
           {children}
         </main>
-        <Footer />
+        <Footer contact={contact} />
       </>
     );
   }

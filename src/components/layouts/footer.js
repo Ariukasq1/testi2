@@ -1,11 +1,8 @@
 import React from "react";
 
-function Footer() {
-  return (
-    <footer className="pt-30 pb-30">
-      © 2020 All right reserved
-    </footer>
-  );
+function Footer({ contact }) {
+  console.log(contact, "================");
+  return <footer className="footer"></footer>;
 }
 
 export default Footer;

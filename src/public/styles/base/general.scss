@@ -12,23 +12,17 @@ label,
 input,
 textarea,
 li {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Segoe UI";
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Segoe UI";
 }
 
 body {
   margin: 0;
   color: $text-color;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Segoe UI";
   word-wrap: break-word;
   font-kerning: normal;
   line-height: 1.75;
@@ -253,4 +247,13 @@ hr {
 
 .relative {
   position: relative;
+}
+
+.page {
+  margin-top: 132px;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/src/public/fonts/Segoe\ UI.ttf");
 }
