@@ -24,7 +24,13 @@ class Layout extends React.Component {
     let sideDrawer;
     let backdrop;
     if (this.state.sideDrawerOpen) {
-      sideDrawer = <SideDrawer botMenu={botMenu} topMenu={topMenu} />;
+      sideDrawer = (
+        <SideDrawer
+          botMenu={botMenu}
+          topMenu={topMenu}
+          onClose={this.backdropClickHandler}
+        />
+      );
       backdrop = <Backdrop onClose={this.backdropClickHandler} />;
     }
     return (

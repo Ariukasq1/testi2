@@ -1,7 +1,6 @@
 import React from "react";
 
-function Footer({ contact }) {
-  console.log(contact, "================");
+function Footer() {
   return <footer className="footer"></footer>;
 }
 

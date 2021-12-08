@@ -1,10 +1,10 @@
 import React from "react";
-import { BotMenu, TopMenu } from "../menu";
+import { SideMenuWithChilds, TopMenu } from "../menu";
 
-const SideDrawer = ({ botMenu, topMenu }) => {
+const SideDrawer = ({ botMenu, topMenu, onClose }) => {
   return (
     <nav className="side-drawer">
-      <BotMenu botMenu={botMenu} />
+      <SideMenuWithChilds botMenu={botMenu} close={onClose} />
       <TopMenu topMenu={topMenu} />
     </nav>
   );

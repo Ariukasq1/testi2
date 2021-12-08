@@ -332,27 +332,40 @@ hr {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 70%;
+  width: 90%;
   max-width: 400px;
 }
 .side-drawer a {
   color: #fff;
-  font-weight: 700;
-}
-.side-drawer .topMenuList {
-  margin-left: auto;
+  font-weight: 300;
+  padding: 0 1rem;
 }
 .side-drawer .topMenuList a {
-  padding: 0 1rem;
   border-right: 1px solid #fff;
+  font-weight: bold;
 }
 .side-drawer .topMenuList a:last-child {
   border: none;
 }
-.side-drawer .botMenuList {
+.side-drawer .SideMenu {
+  position: relative;
+}
+.side-drawer .SideMenu .SideMenuList {
   display: flex;
   flex-direction: column;
+}
+.side-drawer .SideMenu .SideMenuList a {
+  width: max-content;
+}
+.side-drawer .SideMenu .closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #00488d;
+  border-color: #00488d;
 }
 
 .backdrop {
@@ -377,6 +390,9 @@ footer .copyright img {
 }
 
 @media only screen and (max-width: 991px) {
+  .main-header {
+    height: 70px;
+  }
   .main-header .menus {
     display: flex;
     justify-content: center;
@@ -391,6 +407,10 @@ footer .copyright img {
   }
   .main-header .menus .burger .burger-line {
     height: 4px;
+  }
+
+  .page {
+    margin-top: 88px;
   }
 }
 .alignleft {
