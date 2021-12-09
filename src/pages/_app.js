@@ -4,7 +4,8 @@ import "../public/styles/fontawesome/css/all.min.css";
 import Router from "next/router";
 import NProgress from "nprogress";
 import Layout from "../components/layouts/Layout";
-import { Config, fetcher } from "../config";
+import { Config } from "../config";
+import { fetcher } from "../utils";
 import WPAPI from "wpapi";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
