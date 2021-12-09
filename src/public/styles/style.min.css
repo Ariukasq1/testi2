@@ -385,14 +385,68 @@ hr {
 footer {
   background: #262626;
   height: calc(100vh - 132px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-footer .copyright {
-  opacity: 0.9;
+footer .footer {
+  display: flex;
+  width: 90%;
 }
-footer .copyright img {
-  width: 110px;
+footer .footer > div {
+  color: #fff;
+  margin: 0 10px;
+  width: 30%;
+}
+footer .footer > div > h2 {
+  margin: 0;
+}
+footer .footer > div > h2:first-child {
+  margin-bottom: 2rem;
+}
+footer .footer .contacts > h2:last-child {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+  cursor: pointer;
+}
+footer .footer .contacts > h2:last-child > a {
+  cursor: pointer;
+  line-height: 0;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+}
+footer .footer .contacts > h2:last-child > a:hover {
+  background-color: #fff;
+  color: #262626;
+}
+footer .footer .contactUs input,
+footer .footer .contactUs textArea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: 0 0;
+  display: inline-block;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  color: #e4e4e4;
+}
+footer .footer .contactUs input {
+  height: 58px;
+}
+footer .footer .contactUs input:last-child {
+  cursor: pointer;
+}
+footer .footer .contactUs textArea {
+  height: 10rem;
 }
 
+@media only screen and (max-width: 1199px) {
+  footer .footer {
+    width: 95%;
+  }
+}
 @media only screen and (max-width: 991px) {
   .main-header {
     height: 70px;
@@ -415,6 +469,25 @@ footer .copyright img {
 
   .page {
     margin-top: 88px;
+  }
+
+  footer {
+    height: auto;
+  }
+  footer .footer {
+    flex-direction: column;
+  }
+  footer .footer > div {
+    width: 100%;
+    margin: 10px 0 5rem 0;
+  }
+  footer .footer > div:first-child {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 575px) {
+  footer .footer > div:first-child {
+    width: 100%;
   }
 }
 .alignleft {
