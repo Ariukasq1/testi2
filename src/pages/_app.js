@@ -30,9 +30,7 @@ function MyApp({ Component, pageProps, botMenu, topMenu, contact }) {
 MyApp.getInitialProps = async () => {
   const botMenu = await fetcher(`${Config.menuUrl}/nav-menu`);
   const topMenu = await fetcher(`${Config.menuUrl}/nav-menu-top`);
-  const contact = await fetcher(
-    `${Config.apiUrl}/wp/v2/posts?_embed&categories=235`
-  );
+  const contact = await wp.posts().categories().slug("contact").embed();
   return {
     botMenu,
     topMenu,

@@ -1,6 +1,7 @@
 import React from "react";
 
-function Footer() {
+function Footer({ contact }) {
+  const {} = contact.acf;
   return <footer className="footer"></footer>;
 }
 

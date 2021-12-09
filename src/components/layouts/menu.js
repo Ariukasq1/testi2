@@ -2,6 +2,10 @@ import React from "react";
 import Link from "next/link";
 import DrawerToggle from "./sideDrawer/DrawerToggle";
 
+export const SideLanguage = () => {
+  return <div></div>;
+};
+
 export const SideMenuWithChilds = ({ botMenu, close }) => {
   return (
     <div className="SideMenu">
@@ -9,7 +13,7 @@ export const SideMenuWithChilds = ({ botMenu, close }) => {
         return (
           <div className="SideMenuList">
             <Link key={ind} href={`/${item.slug}`}>
-              <a>
+              <a className="titleMenu">
                 <b>{item.title}</b>
               </a>
             </Link>

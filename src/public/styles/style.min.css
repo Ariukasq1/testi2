@@ -332,6 +332,7 @@ hr {
   padding: 24px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   width: 90%;
   max-width: 400px;
 }
@@ -340,15 +341,15 @@ hr {
   font-weight: 300;
   padding: 0 1rem;
 }
+.side-drawer .topMenuList {
+  margin-top: 10px;
+}
 .side-drawer .topMenuList a {
   border-right: 1px solid #fff;
   font-weight: bold;
 }
 .side-drawer .topMenuList a:last-child {
   border: none;
-}
-.side-drawer .SideMenu {
-  position: relative;
 }
 .side-drawer .SideMenu .SideMenuList {
   display: flex;
@@ -357,10 +358,13 @@ hr {
 .side-drawer .SideMenu .SideMenuList a {
   width: max-content;
 }
+.side-drawer .SideMenu .SideMenuList .titleMenu {
+  margin-top: 10px;
+}
 .side-drawer .SideMenu .closeButton {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 24px;
+  right: 24px;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
