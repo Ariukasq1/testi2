@@ -1,6 +1,8 @@
 import React from "react";
 import "../public/styles/style.min.css";
 import "../public/styles/fontawesome/css/all.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Router from "next/router";
 import NProgress from "nprogress";
 import Layout from "../components/layouts/Layout";

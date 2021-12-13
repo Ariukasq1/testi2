@@ -442,6 +442,16 @@ footer .footer .contactUs textArea {
   height: 10rem;
 }
 
+.homeSlider {
+  height: calc(100vh - 132px);
+}
+.homeSlider > img {
+  height: 100%;
+  width: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media only screen and (max-width: 1199px) {
   footer .footer {
     width: 95%;
