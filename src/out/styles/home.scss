@@ -1,0 +1,9 @@
+.homeSlider {
+  height: calc(100vh - 132px);
+  > img {
+    height: 100%;
+    width: inherit;
+    object-fit: cover;
+    object-position: center;
+  }
+}
