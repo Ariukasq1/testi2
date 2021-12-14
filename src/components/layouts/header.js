@@ -50,7 +50,7 @@ function Header({ title, image }) {
         <meta name="twitter:creator" content="@your-site-twitter-name" />
         <meta name="twitter:image:alt" content="Gerege WP Template" />
 
-        <link rel="shortcut icon" id="favicon" href="/favicon.ico"></link>
+        <link rel="shortcut icon" id="favicon" href="/images/mms.png"></link>
       </Head>
     </>
   );

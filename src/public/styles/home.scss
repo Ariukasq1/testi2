@@ -1,9 +1,13 @@
 .homeSlider {
   height: calc(100vh - 132px);
-  > img {
-    height: 100%;
-    width: inherit;
-    object-fit: cover;
-    object-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sliderText {
+    width: 70%;
+    > h1 {
+      font-size: 64px;
+      line-height: normal;
+    }
   }
 }
