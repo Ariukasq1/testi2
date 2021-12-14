@@ -11,3 +11,46 @@
     }
   }
 }
+.homeCapability {
+  height: calc(100vh - 132px);
+  display: flex;
+  > div {
+    flex-basis: 50%;
+  }
+  .halfImage {
+    > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .halfText {
+    display: flex;
+    align-items: center;
+    .capabilitiesText {
+      padding: 2rem 8rem;
+      > div {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+.homeBrands {
+  height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .cats {
+    display: flex;
+    > div {
+      padding: 0 10px;
+      cursor: pointer;
+      border-right: 1px solid black;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}

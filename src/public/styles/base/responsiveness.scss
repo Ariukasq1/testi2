@@ -4,12 +4,102 @@
       width: 80%;
     }
   }
+  .homeCapability {
+    .halfText {
+      .capabilitiesText {
+        padding: 2rem 6rem;
+      }
+    }
+  }
+  .firstPart {
+    padding: 0 5rem;
+    .page-posts {
+      > div {
+        > h2 {
+          margin-bottom: 0.5rem;
+        }
+        > div {
+          margin-bottom: 0.5rem;
+        }
+        > a {
+          > img {
+            margin-top: 0.5rem;
+            height: 320px;
+          }
+        }
+      }
+    }
+  }
+  .page-title {
+    margin-bottom: 1rem;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
+  .firstPart {
+    padding: 0 5rem;
+    .page-posts {
+      > div {
+        > h2 {
+          font-size: 16px;
+          margin-bottom: 0.3rem;
+        }
+        > div {
+          margin-bottom: 0.3rem;
+        }
+        > a {
+          > img {
+            margin-top: 0.3rem;
+            height: 230px;
+          }
+        }
+      }
+    }
+  }
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .homeCapability {
+    .halfText {
+      .capabilitiesText {
+        padding: 2rem 4rem;
+      }
+    }
+  }
   footer {
     .footer {
       width: 95%;
+      > div {
+        > h2 {
+          font-size: 16px;
+          &:first-child {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+      .contacts {
+        > h2:last-child {
+          margin-top: 2rem;
+        }
+      }
+      .contactUs {
+        input,
+        textArea {
+          padding: 6px 10px;
+          margin: 0 0 8px 0;
+        }
+        input {
+          height: 48px;
+          &:last-child {
+            cursor: pointer;
+          }
+        }
+        textArea {
+          height: 8rem;
+        }
+      }
     }
   }
   .homeSlider {
@@ -23,6 +113,47 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .firstPart {
+    height: auto;
+    padding: 2rem;
+    .page-posts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-gap: 1rem;
+      > div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        > a {
+          > img {
+            margin-top: 0.3rem;
+            width: 100%;
+            height: 230px;
+          }
+        }
+      }
+    }
+  }
+  .section {
+    height: max-content !important;
+    .fp-tableCell {
+      height: max-content !important;
+    }
+  }
+
+  .homeSlider {
+    height: calc(100vh - 88px);
+  }
+  .homeCapability {
+    height: auto;
+    flex-direction: column-reverse;
+
+    .halfText {
+      .capabilitiesText {
+        padding: 2rem;
+      }
+    }
+  }
   .main-header {
     height: 70px;
     .menus {
@@ -63,6 +194,12 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .firstPart {
+    padding: 1rem;
+    .page-posts {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
   .homeSlider {
     .sliderText {
       width: 95%;
