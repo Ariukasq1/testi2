@@ -13,14 +13,13 @@ const HomeSlider = ({ sliders }) => {
   return (
     <Slider {...settings}>
       {sliders.map((item, ind) => {
-        console.log(item, "==============");
-        const { image, body, position_of_text } = item.acf;
+        const { image, body, position_of_text, background_color } = item.acf;
         return (
           <div key={ind}>
             <div
               className="homeSlider"
               style={{
-                backgroundImage: `url(${image})`,
+                background: image ? `url(${image})` : background_color,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
