@@ -290,6 +290,7 @@ p {
   color: #fda50f;
   font-size: 1.875rem;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 .heading-title {
@@ -614,6 +615,12 @@ footer .footer .contactUs textArea {
 }
 .about-post .post-image {
   width: 45%;
+}
+
+.about-service {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 1599px) {

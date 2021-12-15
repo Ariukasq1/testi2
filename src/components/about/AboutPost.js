@@ -1,6 +1,5 @@
 import React from "react";
 import { getData } from "../../utils";
-import Link from "next/link";
 
 const AboutPost = ({ post }) => {
   const { title, content, _embedded } = post;
