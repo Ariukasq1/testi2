@@ -1,0 +1,23 @@
+.about-post {
+  height: calc(100vh - 132px);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  .post-text {
+    width: 45%;
+    > h2 {
+      --text-opacity: 1;
+      color: rgba(0, 73, 142, var(--text-opacity));
+      margin-bottom: 2.5rem;
+    }
+    > div {
+      margin-right: 5rem;
+      > p {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  .post-image {
+    width: 45%;
+  }
+}

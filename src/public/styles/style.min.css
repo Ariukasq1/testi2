@@ -592,6 +592,30 @@ footer .footer .contactUs textArea {
   border: 1px solid #eee;
 }
 
+.about-post {
+  height: calc(100vh - 132px);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.about-post .post-text {
+  width: 45%;
+}
+.about-post .post-text > h2 {
+  --text-opacity: 1;
+  color: rgba(0, 73, 142, var(--text-opacity));
+  margin-bottom: 2.5rem;
+}
+.about-post .post-text > div {
+  margin-right: 5rem;
+}
+.about-post .post-text > div > p {
+  margin-bottom: 16px;
+}
+.about-post .post-image {
+  width: 45%;
+}
+
 @media only screen and (max-width: 1599px) {
   .homeSlider .sliderText {
     width: 80%;
