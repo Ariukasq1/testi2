@@ -113,6 +113,22 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .about-post {
+    height: auto;
+    flex-direction: column;
+    .post-text {
+      width: 90%;
+      > h2 {
+        margin-bottom: 1rem;
+      }
+      > div {
+        margin-right: 0;
+      }
+    }
+    .post-image {
+      width: 90%;
+    }
+  }
   .firstPart {
     height: auto;
     padding: 2rem;

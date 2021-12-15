@@ -703,6 +703,23 @@ footer .footer .contactUs textArea {
   }
 }
 @media only screen and (max-width: 991px) {
+  .about-post {
+    height: auto;
+    flex-direction: column;
+  }
+  .about-post .post-text {
+    width: 90%;
+  }
+  .about-post .post-text > h2 {
+    margin-bottom: 1rem;
+  }
+  .about-post .post-text > div {
+    margin-right: 0;
+  }
+  .about-post .post-image {
+    width: 90%;
+  }
+
   .firstPart {
     height: auto;
     padding: 2rem;
