@@ -334,3 +334,32 @@ p {
     }
   }
 }
+
+.brandList {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 5rem;
+  > div {
+    width: 100%;
+    .brand-logo {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 4rem;
+      width: 16rem;
+      > img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .brand-image {
+      height: 14rem;
+      margin-top: 10px;
+      > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

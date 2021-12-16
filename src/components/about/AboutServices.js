@@ -11,7 +11,7 @@ const AboutServices = ({ serviceCats, services }) => {
           if (catId !== item.categories[0]) {
             return null;
           }
-          console.log(products, "===========");
+
           return (
             <div key={ind} className="products">
               {products.map((group, ind) => {

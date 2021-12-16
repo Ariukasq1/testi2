@@ -322,6 +322,35 @@ p {
   border: none;
 }
 
+.brandList {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 5rem;
+}
+.brandList > div {
+  width: 100%;
+}
+.brandList > div .brand-logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 4rem;
+  width: 16rem;
+}
+.brandList > div .brand-logo > img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+.brandList > div .brand-image {
+  height: 14rem;
+  margin-top: 10px;
+}
+.brandList > div .brand-image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .main-header {
   border-bottom: 2px solid #e2e8f0;
   height: 114px;

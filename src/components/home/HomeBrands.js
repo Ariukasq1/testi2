@@ -1,16 +1,48 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import { getData } from "../../utils";
+import Link from "next/link";
 
 const HomeBrands = ({ brandCats, brands }) => {
-  const [filteredBrands, setCatID] = useState(brands);
+  const [brandsId, setCatID] = useState(112);
 
   const settings = {
     dots: false,
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
+  };
+
+  const brandsList = (id) => {
+    console.log(id);
+    return (
+      <Slider {...settings} className="brandList">
+        {brands.map((brand, ind) => {
+          console.log(brand, "=============");
+          if (brand.categories.includes(id)) {
+            return (
+              <div key={ind}>
+                <div className="brand-logo">
+                  <img src={brand.acf.logo} />
+                </div>
+                <Link href={`/hello`}>
+                  <a className="read-more">Read more</a>
+                </Link>
+                <div className="brand-image">
+                  <img
+                    className="hide"
+                    src={getData(brand._embedded, "image")}
+                  />
+                </div>
+              </div>
+            );
+          }
+          return null;
+        })}
+      </Slider>
+    );
   };
 
   return (
@@ -28,11 +60,7 @@ const HomeBrands = ({ brandCats, brands }) => {
           );
         })}
       </div>
-      <div className="brandsList">
-        {filteredBrands.map((brand, ind) => {
-          return <div key={ind}>hello</div>;
-        })}
-      </div>
+      {brandsList(brandsId)}
     </div>
   );
 };
