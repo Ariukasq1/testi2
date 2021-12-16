@@ -17,7 +17,7 @@ const HomeBrands = ({ brandCats, brands }) => {
     <div className="homeBrands">
       <div className="heading-tag">Brands</div>
       <div className="heading-title">Our products</div>
-      <div className="cats">
+      <div className="catList">
         <div onClick={() => setCatID(112)}>All Brands</div>
         {brandCats.map((cat, ind) => {
           const { name, id } = cat;

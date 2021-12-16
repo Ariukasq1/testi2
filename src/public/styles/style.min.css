@@ -307,6 +307,21 @@ p {
   margin-bottom: 2rem;
 }
 
+.catList {
+  display: flex;
+}
+.catList > div {
+  border-right: 1px solid rgba(0, 73, 142, var(--text-opacity));
+  padding: 0 0.5rem;
+  --text-opacity: 1;
+  font-size: 1.125rem;
+  color: rgba(0, 73, 142, var(--text-opacity));
+  cursor: pointer;
+}
+.catList > div:last-child {
+  border: none;
+}
+
 .main-header {
   border-bottom: 2px solid #e2e8f0;
   height: 114px;
@@ -542,17 +557,6 @@ footer .footer .contactUs textArea {
   align-items: center;
   justify-content: center;
 }
-.homeBrands .cats {
-  display: flex;
-}
-.homeBrands .cats > div {
-  padding: 0 10px;
-  cursor: pointer;
-  border-right: 1px solid black;
-}
-.homeBrands .cats > div:last-child {
-  border: none;
-}
 
 .firstPart {
   height: calc(100vh - 132px);
@@ -621,6 +625,50 @@ footer .footer .contactUs textArea {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.about-service .serviceList .products {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-gap: 1rem;
+  margin: 5rem;
+}
+.about-service .serviceList .products > div {
+  display: flex;
+  flex-direction: column;
+}
+.about-service .serviceList .products > div:last-child {
+  display: none;
+}
+.about-service .serviceList .products > div .product-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.about-service .serviceList .products > div .product-title > h5 {
+  font-size: 16px;
+  line-height: normal;
+  margin-top: 15px;
+}
+.about-service .serviceList .products > div .product-title .serviceIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #00498e;
+}
+.about-service .serviceList .products > div .product-title .serviceIcon > img {
+  max-width: 45px;
+  height: 45px;
+}
+.about-service .serviceList .products > div .product-desc {
+  padding-left: 1.5rem;
+}
+.about-service .serviceList .products > div .product-desc ul li {
+  list-style: disc;
 }
 
 @media only screen and (max-width: 1599px) {

@@ -42,15 +42,4 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .cats {
-    display: flex;
-    > div {
-      padding: 0 10px;
-      cursor: pointer;
-      border-right: 1px solid black;
-      &:last-child {
-        border: none;
-      }
-    }
-  }
 }

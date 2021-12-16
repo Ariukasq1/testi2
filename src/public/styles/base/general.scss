@@ -319,3 +319,18 @@ p {
   font-weight: 700;
   margin-bottom: 2rem;
 }
+
+.catList {
+  display: flex;
+  > div {
+    border-right: 1px solid rgba(0, 73, 142, var(--text-opacity));
+    padding: 0 0.5rem;
+    --text-opacity: 1;
+    font-size: 1.125rem;
+    color: rgba(0, 73, 142, var(--text-opacity));
+    cursor: pointer;
+    &:last-child {
+      border: none;
+    }
+  }
+}
