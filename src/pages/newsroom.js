@@ -14,7 +14,7 @@ const Newsroom = ({ newsCats, newsroom }) => {
 };
 
 export async function getStaticProps() {
-  const newsroom = await wp.posts().categories(1).perPage(100).embed();
+  const newsroom = await wp.posts().categories(1).perPage(30).embed();
   const newsCats = await wp.categories().parent(1).embed();
   return {
     props: { newsCats, newsroom },
