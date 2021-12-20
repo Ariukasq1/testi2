@@ -617,6 +617,9 @@ footer .footer .contactUs textArea {
   flex-direction: row-reverse;
   justify-content: space-between;
 }
+.firstPart .page-posts .portfolio {
+  width: 32%;
+}
 .firstPart .page-posts > div {
   width: 23%;
 }
@@ -746,6 +749,7 @@ footer .footer .contactUs textArea {
   .firstPart .page-posts > div > a > img {
     margin-top: 0.5rem;
     height: 320px;
+    width: 100%;
   }
 
   .page-title {
@@ -879,6 +883,9 @@ footer .footer .contactUs textArea {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 1rem;
+  }
+  .firstPart .page-posts .portfolio {
+    width: 100%;
   }
   .firstPart .page-posts > div {
     display: flex;

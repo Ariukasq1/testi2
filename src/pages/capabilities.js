@@ -1,6 +1,6 @@
 import React from "react";
 import WPAPI from "wpapi";
-import FirstPart from "../components/IndustriesCapabilities/FirstPart";
+import FirstPart from "../components/IndCapPortfolio/FirstPart";
 import Config from "../config";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });

@@ -10,7 +10,7 @@ const FirstPart = ({ data, page }) => {
         {data.map((post, ind) => {
           const { title, slug, excerpt, _embedded } = post;
           return (
-            <div key={ind}>
+            <div key={ind} className={page}>
               <h2 dangerouslySetInnerHTML={{ __html: title.rendered }} />
               <div dangerouslySetInnerHTML={{ __html: excerpt.rendered }} />
               <Link href={`/${page}/${slug}`}>
