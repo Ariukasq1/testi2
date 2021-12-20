@@ -722,6 +722,10 @@ footer .footer .contactUs textArea {
 }
 
 @media only screen and (max-width: 1599px) {
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .brandList > div .brand-logo {
     height: 2rem;
   }
@@ -844,6 +848,10 @@ footer .footer .contactUs textArea {
     font-size: 20px;
     bottom: -25px;
   }
+
+  .about-service .serviceList .products {
+    margin: 3rem;
+  }
 }
 @media only screen and (max-width: 991px) {
   .homeBrands {
@@ -953,8 +961,17 @@ footer .footer .contactUs textArea {
   footer .footer > div:first-child {
     width: 70%;
   }
+
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 @media only screen and (max-width: 575px) {
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1rem;
+  }
+
   .catList {
     justify-content: flex-start;
   }

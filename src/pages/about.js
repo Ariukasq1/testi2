@@ -10,16 +10,29 @@ const wp = new WPAPI({ endpoint: Config.apiUrl });
 const About = ({ contact, posts, serviceCats, services }) => {
   return (
     <div className="page About">
-      <AboutPost post={posts[0]} />
+      <AboutPost post={posts} />
       <AboutServices serviceCats={serviceCats} services={services} />
-      <Footer contact={contact[0]} />
+      <Footer contact={contact} />
     </div>
   );
 };
 
 export async function getStaticProps() {
-  const contact = await wp.posts().categories().slug("contact").embed();
-  const posts = await wp.posts().categories(207).embed();
+  const contact = await wp
+    .posts()
+    .categories()
+    .slug("contact")
+    .embed()
+    .then((data) => {
+      return data[0];
+    });
+  const posts = await wp
+    .posts()
+    .categories(207)
+    .embed()
+    .then((data) => {
+      return data[0];
+    });
   const serviceCats = await wp.categories().parent(208).embed();
   const services = await wp
     .posts()
