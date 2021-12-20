@@ -1,45 +1,56 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { getData } from "../../utils";
+import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
 import Link from "next/link";
 
 const HomeBrands = ({ brandCats, brands }) => {
   const [brandsId, setCatID] = useState(112);
 
-  const settings = {
+  const settings_slider = {
     dots: false,
-    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
   };
 
   const brandsList = (id) => {
-    console.log(id);
     return (
-      <Slider {...settings} className="brandList">
+      <Slider {...settings_slider} className="brandList">
         {brands.map((brand, ind) => {
-          console.log(brand, "=============");
-          if (brand.categories.includes(id)) {
-            return (
-              <div key={ind}>
-                <div className="brand-logo">
-                  <img src={brand.acf.logo} />
-                </div>
-                <Link href={`/hello`}>
-                  <a className="read-more">Read more</a>
-                </Link>
-                <div className="brand-image">
-                  <img
-                    className="hide"
-                    src={getData(brand._embedded, "image")}
-                  />
-                </div>
+          return (
+            <div key={ind}>
+              <div className="brand-logo">
+                <img src={brand.acf.logo} />
               </div>
-            );
-          }
-          return null;
+              <Link href={`/hello`}>
+                <a className="read-more">Read more</a>
+              </Link>
+              <div className="brand-image">
+                <img className="hide" src={getData(brand._embedded, "image")} />
+              </div>
+            </div>
+          );
         })}
       </Slider>
     );

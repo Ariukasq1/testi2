@@ -1,4 +1,14 @@
 @media only screen and (max-width: 1599px) {
+  .brandList {
+    > div {
+      .brand-logo {
+        height: 2rem;
+      }
+      .brand-image {
+        height: 10rem;
+      }
+    }
+  }
   .homeSlider {
     .sliderText {
       width: 80%;
@@ -110,9 +120,50 @@
       }
     }
   }
+  .catList {
+    padding: 0 1rem;
+  }
+  .brandList {
+    margin-top: 10px;
+    padding: 0 2rem;
+    > div {
+      .brand-logo {
+        height: 1.75rem;
+      }
+      .brand-image {
+        height: 8rem;
+      }
+    }
+  }
+  .heading-tag {
+    font-size: 1.275rem;
+  }
+  .heading-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .next-arrow,
+  .prev-arrow {
+    font-size: 20px;
+    bottom: -25px;
+  }
 }
 
 @media only screen and (max-width: 991px) {
+  .homeBrands {
+    height: auto;
+    margin-bottom: 40px;
+  }
+  .brandList {
+    > div {
+      .brand-logo {
+        height: 3rem;
+      }
+      .brand-image {
+        height: 12rem;
+      }
+    }
+  }
   .about-post {
     height: auto;
     flex-direction: column;
@@ -210,6 +261,14 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .catList {
+    justify-content: flex-start;
+    > div {
+      font-size: 15px;
+      margin-top: 5px;
+      border: none;
+    }
+  }
   .firstPart {
     padding: 1rem;
     .page-posts {
@@ -229,6 +288,7 @@
   }
   footer {
     .footer {
+      width: 87%;
       > div {
         &:first-child {
           width: 100%;

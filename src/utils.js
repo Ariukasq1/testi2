@@ -1,4 +1,16 @@
 import axios from "axios";
+import React from "react";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+
+export const SampleNextArrow = (props) => {
+  const { onClick } = props;
+  return <RightOutlined onClick={onClick} className="next-arrow" />;
+};
+
+export const SamplePrevArrow = (props) => {
+  const { onClick } = props;
+  return <LeftOutlined onClick={onClick} className="prev-arrow" />;
+};
 
 export const fetcher = (url) => axios.get(url).then((res) => res.data);
 

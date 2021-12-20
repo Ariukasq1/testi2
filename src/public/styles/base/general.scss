@@ -322,6 +322,9 @@ p {
 
 .catList {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 5rem;
   > div {
     border-right: 1px solid rgba(0, 73, 142, var(--text-opacity));
     padding: 0 0.5rem;
@@ -339,6 +342,7 @@ p {
   width: 100%;
   margin-top: 20px;
   padding: 0 5rem;
+  position: relative;
   > div {
     width: 100%;
     .brand-logo {
@@ -362,4 +366,17 @@ p {
       }
     }
   }
+}
+
+.next-arrow {
+  position: absolute;
+  font-size: 30px;
+  bottom: -40px;
+  right: 10rem;
+}
+.prev-arrow {
+  position: absolute;
+  font-size: 30px;
+  bottom: -40px;
+  right: 15rem;
 }

@@ -309,6 +309,9 @@ p {
 
 .catList {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 5rem;
 }
 .catList > div {
   border-right: 1px solid rgba(0, 73, 142, var(--text-opacity));
@@ -326,6 +329,7 @@ p {
   width: 100%;
   margin-top: 20px;
   padding: 0 5rem;
+  position: relative;
 }
 .brandList > div {
   width: 100%;
@@ -349,6 +353,20 @@ p {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.next-arrow {
+  position: absolute;
+  font-size: 30px;
+  bottom: -40px;
+  right: 10rem;
+}
+
+.prev-arrow {
+  position: absolute;
+  font-size: 30px;
+  bottom: -40px;
+  right: 15rem;
 }
 
 .main-header {
@@ -701,6 +719,13 @@ footer .footer .contactUs textArea {
 }
 
 @media only screen and (max-width: 1599px) {
+  .brandList > div .brand-logo {
+    height: 2rem;
+  }
+  .brandList > div .brand-image {
+    height: 10rem;
+  }
+
   .homeSlider .sliderText {
     width: 80%;
   }
@@ -785,8 +810,50 @@ footer .footer .contactUs textArea {
   .homeSlider .sliderText > h1 {
     font-size: 60px;
   }
+
+  .catList {
+    padding: 0 1rem;
+  }
+
+  .brandList {
+    margin-top: 10px;
+    padding: 0 2rem;
+  }
+  .brandList > div .brand-logo {
+    height: 1.75rem;
+  }
+  .brandList > div .brand-image {
+    height: 8rem;
+  }
+
+  .heading-tag {
+    font-size: 1.275rem;
+  }
+
+  .heading-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .next-arrow,
+.prev-arrow {
+    font-size: 20px;
+    bottom: -25px;
+  }
 }
 @media only screen and (max-width: 991px) {
+  .homeBrands {
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .brandList > div .brand-logo {
+    height: 3rem;
+  }
+  .brandList > div .brand-image {
+    height: 12rem;
+  }
+
   .about-post {
     height: auto;
     flex-direction: column;
@@ -881,6 +948,15 @@ footer .footer .contactUs textArea {
   }
 }
 @media only screen and (max-width: 575px) {
+  .catList {
+    justify-content: flex-start;
+  }
+  .catList > div {
+    font-size: 15px;
+    margin-top: 5px;
+    border: none;
+  }
+
   .firstPart {
     padding: 1rem;
   }
@@ -898,6 +974,9 @@ footer .footer .contactUs textArea {
     font-size: 16px;
   }
 
+  footer .footer {
+    width: 87%;
+  }
   footer .footer > div:first-child {
     width: 100%;
   }
