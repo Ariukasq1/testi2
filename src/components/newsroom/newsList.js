@@ -4,7 +4,6 @@ import Link from "next/link";
 import Slider from "react-slick";
 
 const NewsList = ({ data, cats }) => {
-  console.log(data, "==========");
   const settings = {
     dots: false,
     infinite: true,

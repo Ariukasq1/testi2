@@ -750,7 +750,63 @@ footer .footer .contactUs textArea {
   margin: 20px;
 }
 
+.human-res {
+  height: calc(100vh - 132px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+}
+.human-res .careerList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 3rem;
+  gap: 3rem;
+}
+.human-res .careerList .card {
+  box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+}
+.human-res .careerList .card .card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 60px;
+  height: 350px;
+  background-color: #edf2f7;
+  border-radius: 10px 10px 0 0;
+}
+.human-res .careerList .card .card-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.human-res .careerList .card .card-text {
+  padding: 1.5rem;
+}
+.human-res .careerList .card .card-text > h4 {
+  --text-opacity: 1;
+  color: rgba(0, 73, 142, var(--text-opacity));
+}
+.human-res .careerList .card .card-text li {
+  margin: 0;
+  list-style: inside;
+}
+
 @media only screen and (max-width: 1599px) {
+  .heading-tag {
+    font-size: 1.25rem;
+  }
+
+  .heading-title {
+    font-size: 2.25rem;
+  }
+
+  .human-res .careerList .card .card-image {
+    height: 180px;
+    padding: 10px 30px;
+  }
+
   .about-service .serviceList .products {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -797,6 +853,21 @@ footer .footer .contactUs textArea {
   }
 }
 @media only screen and (max-width: 1199px) {
+  .human-res {
+    padding: 0 3rem;
+  }
+  .human-res .careerList {
+    grid-gap: 1rem;
+    gap: 1rem;
+  }
+  .human-res .careerList .card .card-image {
+    height: 150px;
+    padding: 5px 25px;
+  }
+  .human-res .careerList .card .card-text {
+    padding: 1rem;
+  }
+
   .firstPart {
     padding: 0 5rem;
   }
@@ -870,12 +941,7 @@ footer .footer .contactUs textArea {
     height: 8rem;
   }
 
-  .heading-tag {
-    font-size: 1.275rem;
-  }
-
   .heading-title {
-    font-size: 2rem;
     margin-bottom: 10px;
   }
 
@@ -904,6 +970,24 @@ footer .footer .contactUs textArea {
   }
 }
 @media only screen and (max-width: 991px) {
+  .human-res {
+    height: auto;
+    margin-bottom: 50px;
+    padding: 0 3rem;
+  }
+  .human-res .careerList {
+    grid-gap: 3rem;
+    gap: 3rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .human-res .careerList .card .card-image {
+    height: 150px;
+    padding: 5px 25px;
+  }
+  .human-res .careerList .card .card-text {
+    padding: 1rem;
+  }
+
   .newsList {
     height: auto;
     margin-bottom: 50px;
@@ -1025,6 +1109,20 @@ footer .footer .contactUs textArea {
   }
 }
 @media only screen and (max-width: 575px) {
+  .human-res {
+    padding: 0 1rem;
+  }
+  .human-res .careerList {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .human-res .careerList .card .card-image {
+    height: 150px;
+    padding: 5px 25px;
+  }
+  .human-res .careerList .card .card-text {
+    padding: 1rem;
+  }
+
   .newsList {
     padding: 0 1rem;
   }
