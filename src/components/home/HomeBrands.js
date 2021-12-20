@@ -47,7 +47,7 @@ const HomeBrands = ({ brandCats, brands }) => {
                 <a className="read-more">Read more</a>
               </Link>
               <div className="brand-image">
-                <img className="hide" src={getData(brand._embedded, "image")} />
+                <img src={getData(brand._embedded, "image")} />
               </div>
             </div>
           );

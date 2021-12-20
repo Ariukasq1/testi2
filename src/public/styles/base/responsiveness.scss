@@ -51,6 +51,16 @@
   .page-title {
     margin-bottom: 1rem;
   }
+  .newsList {
+    .news-slider {
+      .newslist-image {
+        height: 10rem;
+        > div {
+          line-height: normal;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -162,9 +172,31 @@
       }
     }
   }
+  .newsList {
+    padding: 0 3rem;
+    .news-slider {
+      margin-top: 0.5rem;
+      .newslist-image {
+        height: 9rem;
+        > div {
+          margin: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 991px) {
+  .newsList {
+    height: auto;
+    margin-bottom: 50px;
+    .news-slider {
+      .newslist-image {
+        height: 14rem;
+      }
+    }
+  }
   .homeBrands {
     height: auto;
     margin-bottom: 40px;
@@ -286,6 +318,9 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .newsList {
+    padding: 0 1rem;
+  }
   .about-service {
     .serviceList {
       .products {

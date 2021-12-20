@@ -1,0 +1,27 @@
+.newsList {
+  height: calc(100vh - 132px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  .news-slider {
+    width: 100%;
+    margin-top: 1.25rem;
+    .newslist-image {
+      display: flex;
+      align-items: flex-end;
+      font-size: 1rem;
+      height: 16rem;
+      background-color: gray;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      --text-opacity: 1;
+      color: rgba(255, 255, 255, var(--text-opacity));
+      > div {
+        margin: 20px;
+      }
+    }
+  }
+}
