@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./header";
-import Footer from "./footer";
 import Menu from "./menu";
 import SideDrawer from "../layouts/sideDrawer/SideDrawer";
 import Backdrop from "./sideDrawer/Backdrop";
@@ -46,7 +45,6 @@ class Layout extends React.Component {
           {backdrop}
           {children}
         </main>
-        <Footer contact={contact} />
       </>
     );
   }

@@ -2,7 +2,6 @@ import React from "react";
 import "../public/styles/style.min.css";
 import "../public/styles/fontawesome/css/all.min.css";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Router from "next/router";
 import NProgress from "nprogress";
 import Layout from "../components/layouts/Layout";
@@ -22,9 +21,9 @@ Router.events.on("routeChangeComplete", () => {
 
 Router.events.on("routeChangeError", () => NProgress.done());
 
-function MyApp({ Component, pageProps, botMenu, topMenu, contact }) {
+function MyApp({ Component, pageProps, botMenu, topMenu }) {
   return (
-    <Layout botMenu={botMenu} topMenu={topMenu} contact={contact[0]}>
+    <Layout botMenu={botMenu} topMenu={topMenu}>
       <Component {...pageProps} />
     </Layout>
   );
@@ -33,11 +32,10 @@ function MyApp({ Component, pageProps, botMenu, topMenu, contact }) {
 MyApp.getInitialProps = async () => {
   const botMenu = await fetcher(`${Config.menuUrl}/nav-menu`);
   const topMenu = await fetcher(`${Config.menuUrl}/nav-menu-top`);
-  const contact = await wp.posts().categories().slug("contact").embed();
+
   return {
     botMenu,
     topMenu,
-    contact,
   };
 };
 

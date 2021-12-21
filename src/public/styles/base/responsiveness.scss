@@ -1,15 +1,323 @@
 @media only screen and (max-width: 1599px) {
+  .heading-tag {
+    font-size: 1.25rem;
+  }
+  .heading-title {
+    font-size: 2.25rem;
+  }
+  .human-res {
+    .careerList {
+      .card {
+        .card-image {
+          height: 180px;
+          padding: 10px 30px;
+        }
+      }
+    }
+  }
+  .about-service {
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+  }
+  .brandList {
+    > div {
+      .brand-logo {
+        height: 2rem;
+      }
+      .brand-image {
+        height: 10rem;
+      }
+    }
+  }
+  .homeSlider {
+    .sliderText {
+      width: 80%;
+    }
+  }
+  .homeCapability {
+    .halfText {
+      .capabilitiesText {
+        padding: 2rem 6rem;
+      }
+    }
+  }
+  .firstPart {
+    padding: 0 5rem;
+    .page-posts {
+      > div {
+        > h2 {
+          margin-bottom: 0.5rem;
+        }
+        > div {
+          margin-bottom: 0.5rem;
+        }
+        > a {
+          > img {
+            margin-top: 0.5rem;
+            height: 320px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .page-title {
+    margin-bottom: 1rem;
+  }
+  .newsList {
+    .news-slider {
+      .newslist-image {
+        height: 10rem;
+        > div {
+          line-height: normal;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1199px) {
+  .human-res {
+    padding: 0 3rem;
+    .careerList {
+      grid-gap: 1rem;
+      gap: 1rem;
+      .card {
+        .card-image {
+          height: 150px;
+          padding: 5px 25px;
+        }
+        .card-text {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  .firstPart {
+    padding: 0 5rem;
+    .page-posts {
+      > div {
+        > h2 {
+          font-size: 16px;
+          margin-bottom: 0.3rem;
+        }
+        > div {
+          margin-bottom: 0.3rem;
+        }
+        > a {
+          > img {
+            margin-top: 0.3rem;
+            height: 230px;
+          }
+        }
+      }
+    }
+  }
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .homeCapability {
+    .halfText {
+      .capabilitiesText {
+        padding: 2rem 4rem;
+      }
+    }
+  }
   footer {
     .footer {
       width: 95%;
+      > div {
+        > h2 {
+          font-size: 16px;
+          &:first-child {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+      .contacts {
+        > h2:last-child {
+          margin-top: 2rem;
+        }
+      }
+      .contactUs {
+        input,
+        textArea {
+          padding: 6px 10px;
+          margin: 0 0 8px 0;
+        }
+        input {
+          height: 48px;
+          &:last-child {
+            cursor: pointer;
+          }
+        }
+        textArea {
+          height: 8rem;
+        }
+      }
+    }
+  }
+  .homeSlider {
+    .sliderText {
+      width: 90%;
+      > h1 {
+        font-size: 60px;
+      }
+    }
+  }
+  .catList {
+    padding: 0 1rem;
+  }
+  .brandList {
+    margin-top: 10px;
+    padding: 0 2rem;
+    > div {
+      .brand-logo {
+        height: 1.75rem;
+      }
+      .brand-image {
+        height: 8rem;
+      }
+    }
+  }
+  .heading-title {
+    margin-bottom: 10px;
+  }
+  .next-arrow,
+  .prev-arrow {
+    font-size: 20px;
+    bottom: -25px;
+  }
+  .about-service {
+    .serviceList {
+      .products {
+        margin: 3rem;
+      }
+    }
+  }
+  .newsList {
+    padding: 0 3rem;
+    .news-slider {
+      margin-top: 0.5rem;
+      .newslist-image {
+        height: 9rem;
+        > div {
+          margin: 10px;
+          font-size: 14px;
+        }
+      }
     }
   }
 }
 
 @media only screen and (max-width: 991px) {
+  .human-res {
+    height: auto;
+    margin-bottom: 50px;
+    padding: 0 3rem;
+    .careerList {
+      grid-gap: 3rem;
+      gap: 3rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      .card {
+        .card-image {
+          height: 150px;
+          padding: 5px 25px;
+        }
+        .card-text {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  .newsList {
+    height: auto;
+    margin-bottom: 50px;
+    .news-slider {
+      .newslist-image {
+        height: 14rem;
+      }
+    }
+  }
+  .homeBrands {
+    height: auto;
+    margin-bottom: 40px;
+  }
+  .brandList {
+    > div {
+      .brand-logo {
+        height: 3rem;
+      }
+      .brand-image {
+        height: 12rem;
+      }
+    }
+  }
+  .about-post {
+    height: auto;
+    flex-direction: column;
+    .post-text {
+      width: 90%;
+      > h2 {
+        margin-bottom: 1rem;
+      }
+      > div {
+        margin-right: 0;
+      }
+    }
+    .post-image {
+      width: 90%;
+    }
+  }
+  .firstPart {
+    height: auto;
+    padding: 2rem;
+    .page-posts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-gap: 1rem;
+      .portfolio {
+        width: 100%;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        > a {
+          > img {
+            margin-top: 0.3rem;
+            width: 100%;
+            height: 230px;
+          }
+        }
+      }
+    }
+  }
+  .section {
+    height: max-content !important;
+    .fp-tableCell {
+      height: max-content !important;
+    }
+  }
+
+  .homeSlider {
+    height: calc(100vh - 88px);
+  }
+  .homeCapability {
+    height: auto;
+    flex-direction: column-reverse;
+
+    .halfText {
+      .capabilitiesText {
+        padding: 2rem;
+      }
+    }
+  }
   .main-header {
     height: 70px;
     .menus {
@@ -44,14 +352,73 @@
       }
     }
   }
+  .about-service {
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
 }
 
 @media only screen and (max-width: 575px) {
+  .human-res {
+    padding: 0 1rem;
+    .careerList {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      .card {
+        .card-image {
+          height: 150px;
+          padding: 5px 25px;
+        }
+        .card-text {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  .newsList {
+    padding: 0 1rem;
+  }
+  .about-service {
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 1rem;
+      }
+    }
+  }
+  .catList {
+    justify-content: flex-start;
+    > div {
+      font-size: 15px;
+      margin-top: 5px;
+      border: none;
+    }
+  }
+  .firstPart {
+    padding: 1rem;
+    .page-posts {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  .homeSlider {
+    .sliderText {
+      width: 95%;
+      > h1 {
+        font-size: 32px;
+      }
+      > h2 {
+        font-size: 16px;
+      }
+    }
+  }
   footer {
     .footer {
+      width: 87%;
       > div {
         &:first-child {
           width: 100%;

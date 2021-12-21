@@ -1,9 +1,45 @@
 .homeSlider {
   height: calc(100vh - 132px);
-  > img {
-    height: 100%;
-    width: inherit;
-    object-fit: cover;
-    object-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sliderText {
+    width: 70%;
+    > h1 {
+      font-size: 64px;
+      line-height: normal;
+    }
   }
+}
+.homeCapability {
+  height: calc(100vh - 132px);
+  display: flex;
+  > div {
+    flex-basis: 50%;
+  }
+  .halfImage {
+    > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .halfText {
+    display: flex;
+    align-items: center;
+    .capabilitiesText {
+      padding: 2rem 8rem;
+      > div {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+.homeBrands {
+  height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
