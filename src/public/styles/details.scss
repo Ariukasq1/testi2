@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   height: calc(100vh - 132px);
   .halfContents {
-    padding: 1rem;
+    padding: 3rem;
     .cards {
       margin-top: 1rem;
       display: grid;
@@ -107,7 +107,7 @@
   > div {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 3rem;
     > img {
       height: 50px;
       width: 50px;
@@ -119,6 +119,27 @@
         color: rgba(0, 73, 142, var(--text-opacity));
         font-size: 1.5rem;
         font-weight: 700;
+      }
+    }
+  }
+}
+
+.ItemRelations {
+  padding: 3rem;
+  .relations {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    .relation-card {
+      margin-top: 1rem;
+      .relation-image {
+        height: 16rem;
+        > img {
+          object-fit: cover;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }

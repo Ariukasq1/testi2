@@ -5,14 +5,16 @@ import ItemDetail from "./ItemDetail";
 import FactSection from "./FactSection";
 import Additional from "./Additional";
 import ItemRelations from "./ItemRelations";
+import router from "next/router";
 
-const FirstPart = ({ data, page }) => {
+const FirstPart = ({ data, page, brands, rel }) => {
   const [display, setDisplay] = useState("none");
   const [post, setPost] = useState();
 
-  const renderPost = (display, post) => {
+  const renderPost = (display, post, slug) => {
     setDisplay(display);
     setPost(post);
+    router.push(`/${page}#${slug}`);
   };
 
   return (
@@ -21,20 +23,21 @@ const FirstPart = ({ data, page }) => {
         <div className="page-title">{page}</div>
         <div className="page-posts">
           {data.map((post, ind) => {
-            const { title, slug, excerpt, _embedded } = post;
+            const { title, excerpt, slug, _embedded } = post;
+
             return (
               <div key={ind} className={page}>
                 <h2 dangerouslySetInnerHTML={{ __html: title.rendered }} />
                 <div dangerouslySetInnerHTML={{ __html: excerpt.rendered }} />
                 <div
-                  onClick={() => renderPost("block", post)}
+                  onClick={() => renderPost("block", post, slug)}
                   className="read-more"
                 >
                   Read more
                 </div>
                 <div
                   className="post-image"
-                  onClick={() => renderPost("block", post)}
+                  onClick={() => renderPost("block", post, slug)}
                 >
                   <img src={getData(_embedded, "image")} />
                 </div>
@@ -44,12 +47,12 @@ const FirstPart = ({ data, page }) => {
         </div>
       </div>
       {display !== "none" ? (
-        <>
+        <div>
           <ItemDetail post={post} />
           {post.acf.bg_image && <FactSection post={post} />}
           {post.acf.additional && <Additional post={post} />}
-          <ItemRelations post={post} />
-        </>
+          <ItemRelations post={post} brands={brands} data={rel} name={page} />
+        </div>
       ) : null}
     </>
   );

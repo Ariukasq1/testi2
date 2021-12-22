@@ -15,7 +15,7 @@ const Brands = ({ brandCats, brands }) => {
 
 export async function getStaticProps() {
   const brandCats = await wp.categories().parent(112).embed();
-  const brands = await wp.posts().categories(112).perPage(80).embed();
+  const brands = await wp.posts().categories(112).perPage(100).embed();
   return {
     props: {
       brandCats,

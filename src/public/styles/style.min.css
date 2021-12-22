@@ -830,7 +830,7 @@ footer .footer .contactUs textArea {
   height: calc(100vh - 132px);
 }
 .ItemDetail .halfContents {
-  padding: 1rem;
+  padding: 3rem;
 }
 .ItemDetail .halfContents .cards {
   margin-top: 1rem;
@@ -931,7 +931,7 @@ footer .footer .contactUs textArea {
 .Additional > div {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 3rem;
 }
 .Additional > div > img {
   height: 50px;
@@ -945,6 +945,27 @@ footer .footer .contactUs textArea {
   color: rgba(0, 73, 142, var(--text-opacity));
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.ItemRelations {
+  padding: 3rem;
+}
+.ItemRelations .relations {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.ItemRelations .relations .relation-card {
+  margin-top: 1rem;
+}
+.ItemRelations .relations .relation-card .relation-image {
+  height: 16rem;
+}
+.ItemRelations .relations .relation-card .relation-image > img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 1599px) {

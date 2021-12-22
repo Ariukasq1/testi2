@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const FactSection = ({ post }) => {
   const { bg_image } = post.acf;
-  console.log(post, "==========");
+  /* console.log(post, "=========="); */
   return (
     <div
       className="FactSection"
