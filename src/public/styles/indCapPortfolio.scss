@@ -29,7 +29,8 @@
         text-overflow: ellipsis;
         margin-bottom: 1rem;
       }
-      > a {
+      .post-image {
+        cursor: pointer;
         > img {
           margin-top: 1rem;
           height: 450px;
