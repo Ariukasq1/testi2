@@ -42,7 +42,7 @@ const ItemRelations = ({ post, data, brands, name }) => {
             return (
               <div key={ind} className="relation-card">
                 <div dangerouslySetInnerHTML={{ __html: el.title.rendered }} />
-                <Link href={`/${category}#${el.slug}`}>
+                <Link href={`/${category}/${el.slug}`}>
                   <div className="relation-image">
                     <img src={getData(el._embedded, "image")} />
                   </div>
