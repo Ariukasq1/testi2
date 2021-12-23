@@ -144,3 +144,34 @@
     }
   }
 }
+
+// BrandDetail components
+
+.BrandsDetail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  position: relative;
+  .detail-image {
+    min-height: calc(100vh - 132px);
+    > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .detail-about,
+  .detail-detail {
+    padding: 4rem;
+    .bodyText {
+      font-size: 1.125rem;
+      font-weight: 400;
+    }
+  }
+  .certificate {
+    position: absolute;
+    right: 8rem;
+    bottom: 10%;
+    width: 50%;
+  }
+}

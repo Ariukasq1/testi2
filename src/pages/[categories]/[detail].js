@@ -7,26 +7,27 @@ import ItemDetail from "../../components/IndCapPortfolio/ItemDetail";
 import FactSection from "../../components/IndCapPortfolio/FactSection";
 import Additional from "../../components/IndCapPortfolio/Additional";
 import HomeBrands from "../../components/home/HomeBrands";
+import BrandsDetail from "../../components/brands/BrandDetail";
 
-const Detail = ({ category, data, post, brandCats }) => {
-  if (category === "brands") {
-    return (
-      <Layout>
-        <div className="page">
-          <HomeBrands brands={data} brandCats={brandCats} />
-        </div>
-      </Layout>
-    );
-  }
+const Detail = ({ slug, data, post }) => {
+  console.log(post, "============");
   return (
     <Layout>
-      <div className="page">
-        <FirstPart data={data} page={category} />
-        <div>
-          <ItemDetail post={post} />
-          {post.acf.bg_image && <FactSection post={post} />}
-          {post.acf.additional && <Additional post={post} />}
-        </div>
+      <div className={`page ${slug}`}>
+        {slug === "brands" ? (
+          <>
+            <BrandsDetail post={post} />
+          </>
+        ) : (
+          <>
+            <FirstPart data={data} page={slug} />
+            <div>
+              <ItemDetail post={post} />
+              {post.acf.bg_image && <FactSection post={post} />}
+              {post.acf.additional && <Additional post={post} />}
+            </div>
+          </>
+        )}
       </div>
     </Layout>
   );
@@ -34,8 +35,8 @@ const Detail = ({ category, data, post, brandCats }) => {
 
 Detail.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
-
-  const category = context.query.categories;
+  console.log(context, "============");
+  const slug = context.query.categories;
   const detail = context.query.detail;
 
   const post = await wp
@@ -46,15 +47,13 @@ Detail.getInitialProps = async (context) => {
 
   const catId = await wp
     .categories()
-    .slug(`${category}`)
+    .slug(`${slug}`)
     .embed()
     .then((data) => data[0]);
 
-  const brandCats = await wp.categories().parent(catId.id).embed();
-
   const data = await wp.posts().categories(catId.id).embed();
 
-  return { category, data, post, brandCats };
+  return { slug, data, post };
 };
 
 export default Detail;

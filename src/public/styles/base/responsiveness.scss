@@ -28,7 +28,9 @@
         height: 2rem;
       }
       .brand-image {
-        height: 10rem;
+        > img {
+          height: 10rem;
+        }
       }
     }
   }
@@ -181,7 +183,9 @@
         height: 1.75rem;
       }
       .brand-image {
-        height: 8rem;
+        > img {
+          height: 8rem;
+        }
       }
     }
   }
@@ -254,7 +258,9 @@
         height: 3rem;
       }
       .brand-image {
-        height: 12rem;
+        > img {
+          height: 12rem;
+        }
       }
     }
   }
