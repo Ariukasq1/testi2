@@ -1,5 +1,6 @@
 import React from "react";
-import { SideMenuWithChilds, TopMenu } from "../menu";
+import SideMenuWithChilds from "../side-menu";
+import TopMenu from "../top-menu";
 
 const SideDrawer = ({ botMenu, topMenu, onClose }) => {
   return (

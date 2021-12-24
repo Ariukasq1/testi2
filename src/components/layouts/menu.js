@@ -1,89 +1,100 @@
 import React from "react";
 import Link from "next/link";
-import DrawerToggle from "./sideDrawer/DrawerToggle";
+import SideDrawer from "./sideDrawer/SideDrawer";
+import Backdrop from "./sideDrawer/Backdrop";
+import TopMenu from "./top-menu";
+import MainMenu from "./main-menu";
+import axios from "axios";
+import config from "../../config";
 
-export const SideLanguage = () => {
-  return <div></div>;
-};
+class MenuComponent extends React.Component {
+  constructor(props) {
+    super(props);
 
-export const SideMenuWithChilds = ({ botMenu, close }) => {
-  return (
-    <div className="SideMenu">
-      {botMenu.items.map((item, ind) => {
-        return (
-          <div className="SideMenuList">
-            <Link key={ind} href={`/${item.slug}`}>
-              <a className="titleMenu">
-                <b>{item.title}</b>
+    this.state = {
+      topMenu: [],
+      mainMenu: [],
+      sideDrawerOpen: false,
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get(`${config().apiUrl}/menus/v1/menus/nav-menu-top`)
+      .then((res) =>
+        this.setState({
+          topMenu: res.data,
+          loading: true,
+        })
+      )
+      .catch((err) => console.log(err));
+    axios
+      .get(`${config().apiUrl}/menus/v1/menus/nav-menu`)
+      .then((res) =>
+        this.setState({
+          mainMenu: res.data,
+          loading: true,
+        })
+      )
+      .catch((err) => console.log(err));
+  }
+
+  drawerToggleClickOn = () => {
+    this.setState((prevState) => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({ sideDrawerOpen: false });
+  };
+
+  render() {
+    const { topMenu, mainMenu } = this.state;
+
+    if (
+      !topMenu.items ||
+      topMenu.items.length === 0 ||
+      !mainMenu.items ||
+      mainMenu.items.length === 0
+    ) {
+      return null;
+    }
+
+    let sideDrawer;
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      sideDrawer = (
+        <SideDrawer
+          botMenu={mainMenu}
+          topMenu={topMenu}
+          onClose={this.backdropClickHandler}
+        />
+      );
+      backdrop = <Backdrop onClose={this.backdropClickHandler} />;
+    }
+
+    return (
+      <>
+        <div className="main-header">
+          <div className="logo">
+            <Link href="/">
+              <a>
+                <img src="images/mms.png" />
               </a>
             </Link>
-            {item.child_items &&
-              item.child_items.map((child, ind) => {
-                return (
-                  <Link key={ind} href={`/${item.slug}/${child.title}`}>
-                    <a>{child.title}</a>
-                  </Link>
-                );
-              })}
           </div>
-        );
-      })}
-      <button className="closeButton" onClick={close}>
-        X
-      </button>
-    </div>
-  );
-};
-
-export const TopMenu = ({ topMenu }) => {
-  return (
-    <div className="topMenu">
-      <div className="topMenuList">
-        {topMenu.items.map((item, ind) => {
-          return (
-            <Link key={ind} href={`/${item.slug}`}>
-              <a>{item.title}</a>
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-export const BotMenu = ({ botMenu, handler }) => {
-  return (
-    <div className="botMenu">
-      <div className="botMenuList">
-        {botMenu.items.map((item, ind) => {
-          return (
-            <Link key={ind} href={`/${item.slug}`}>
-              <a>{item.title}</a>
-            </Link>
-          );
-        })}
-      </div>
-      <DrawerToggle click={handler} />
-    </div>
-  );
-};
-
-const MenuComponent = ({ botMenu, topMenu, drawerClickHandler }) => {
-  return (
-    <div className="main-header">
-      <div className="logo">
-        <Link href="/">
-          <a>
-            <img src="images/mms.png" />
-          </a>
-        </Link>
-      </div>
-      <div className="menus">
-        <TopMenu topMenu={topMenu} />
-        <BotMenu botMenu={botMenu} handler={drawerClickHandler} />
-      </div>
-    </div>
-  );
-};
+          <div className="menus">
+            <TopMenu topMenu={topMenu} />
+            <MainMenu botMenu={mainMenu} handler={this.drawerToggleClickOn} />
+          </div>
+        </div>
+        {sideDrawer}
+        {backdrop}
+      </>
+    );
+  }
+}
 
 export default MenuComponent;

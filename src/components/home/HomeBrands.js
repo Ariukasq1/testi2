@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
 import Link from "next/link";
 
-const HomeBrands = ({ brandCats, brands }) => {
+const HomeBrands = ({ brandCats, brands, page }) => {
   const [brandsId, setCatID] = useState(112);
 
   const settings_slider = {
@@ -43,12 +43,20 @@ const HomeBrands = ({ brandCats, brands }) => {
               <div className="brand-logo">
                 <img src={brand.acf.logo} />
               </div>
-              <Link href={`/hello`}>
+              <Link
+                href={"/[categories]/[detail]"}
+                as={`/${page}/${brand.slug}`}
+              >
                 <a className="read-more">Read more</a>
               </Link>
-              <div className="brand-image">
-                <img src={getData(brand._embedded, "image")} />
-              </div>
+              <Link
+                href={"/[categories]/[detail]"}
+                as={`/${page}/${brand.slug}`}
+              >
+                <a className="brand-image">
+                  <img src={getData(brand._embedded, "image")} />
+                </a>
+              </Link>
             </div>
           );
         })}

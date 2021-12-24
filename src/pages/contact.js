@@ -1,26 +1,34 @@
 import React from "react";
 import Footer from "../components/layouts/footer";
 import WPAPI from "wpapi";
-import Config from "../config";
-
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+import config from "../config";
+import Layout from "../components/layouts/Layout";
 
 const Contact = ({ contact }) => {
   return (
-    <div className="page Contact">
-      <Footer contact={contact[0]} />
-    </div>
+    <Layout>
+      <div className="page Contact">
+        <Footer contact={contact} />
+      </div>
+    </Layout>
   );
 };
 
-export async function getStaticProps() {
-  const contact = await wp.posts().categories().slug("contact").embed();
+Contact.getInitialProps = async (context) => {
+  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+
+  const contact = await wp
+    .posts()
+    .categories()
+    .slug("contact")
+    .embed()
+    .then((data) => {
+      return data[0];
+    });
 
   return {
-    props: {
-      contact,
-    },
+    contact,
   };
-}
+};
 
 export default Contact;
