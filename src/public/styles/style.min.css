@@ -408,6 +408,10 @@ p {
   object-position: center;
 }
 
+.detail-half-text {
+  padding: 5rem;
+}
+
 .main-header {
   border-bottom: 2px solid #e2e8f0;
   height: 114px;
@@ -689,6 +693,11 @@ footer .footer .contactUs textArea {
   border: 1px solid #eee;
 }
 
+.portfolio-product {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .about-post {
   height: calc(100vh - 132px);
   display: flex;
@@ -795,9 +804,6 @@ footer .footer .contactUs textArea {
 .NewsDetail {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.NewsDetail .detail-news {
-  padding: 5rem;
 }
 
 .RelatedNews {

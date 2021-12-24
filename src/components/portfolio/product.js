@@ -1,14 +1,13 @@
 import React from "react";
 import { getData } from "../../utils";
 
-const NewsDetail = ({ post }) => {
+const Product = ({ post }) => {
   return (
-    <div className="NewsDetail">
+    <div className="portfolio-product">
       <div className="detail-half-text ">
-        <div
-          className="blueTitle"
-          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        />
+        <div className="blueTitle">
+          <div dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+        </div>
         <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       </div>
       <div className="detail-image">
@@ -18,4 +17,4 @@ const NewsDetail = ({ post }) => {
   );
 };
 
-export default NewsDetail;
+export default Product;

@@ -6,14 +6,15 @@ import FirstPart from "../../components/IndCapPortfolio/FirstPart";
 import ItemDetail from "../../components/IndCapPortfolio/ItemDetail";
 import FactSection from "../../components/IndCapPortfolio/FactSection";
 import Additional from "../../components/IndCapPortfolio/Additional";
-import HomeBrands from "../../components/home/HomeBrands";
 import BrandsDetail from "../../components/brands/BrandDetail";
 import NewsDetail from "../../components/newsroom/newsDetail";
 import RelatedNews from "../../components/newsroom/relatedNews";
 import CareerDetail from "../../components/careers/careerDetail";
 import HumanRes from "../../components/careers/HumanRes";
+import Product from "../../components/portfolio/product";
+import Projects from "../../components/portfolio/projects";
 
-const Detail = ({ slug, data, post, detail }) => {
+const Detail = ({ slug, data, post, detail, catId, test }) => {
   const renderSwitch = (slug) => {
     switch (slug) {
       case "brands":
@@ -32,6 +33,15 @@ const Detail = ({ slug, data, post, detail }) => {
           <>
             <HumanRes career={data} page={slug} />;
             <CareerDetail post={post} />;
+          </>
+        );
+
+      case "portfolio":
+        return (
+          <>
+            <FirstPart data={data} page={slug} />
+            <Product post={post} />
+            <Projects post={test} />
           </>
         );
 
@@ -60,6 +70,7 @@ Detail.getInitialProps = async (context) => {
 
   const slug = context.query.categories;
   const detail = context.query.detail;
+  console.log(context, "asdjaskdas------");
 
   const post = await wp
     .posts()
@@ -74,8 +85,9 @@ Detail.getInitialProps = async (context) => {
     .then((data) => data[0]);
 
   const data = await wp.posts().categories(catId.id).embed();
+  const test = await wp.posts().categories().embed();
 
-  return { slug, data, post, detail };
+  return { slug, data, post, detail, catId, test };
 };
 
 export default Detail;
