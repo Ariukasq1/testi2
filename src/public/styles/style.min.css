@@ -398,6 +398,16 @@ p {
   right: 15rem;
 }
 
+.detail-image {
+  min-height: calc(100vh - 132px);
+}
+.detail-image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .main-header {
   border-bottom: 2px solid #e2e8f0;
   height: 114px;
@@ -770,8 +780,9 @@ footer .footer .contactUs textArea {
   align-items: flex-end;
   font-size: 1rem;
   height: 16rem;
-  background-color: gray;
+  background-color: rgba(240, 240, 240, 0.6);
   background-repeat: no-repeat;
+  border: 0 solid #e2e8f0;
   background-size: cover;
   background-position: center;
   --text-opacity: 1;
@@ -779,6 +790,33 @@ footer .footer .contactUs textArea {
 }
 .newsList .news-slider .newslist-image > div {
   margin: 20px;
+}
+
+.NewsDetail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.NewsDetail .detail-news {
+  padding: 5rem;
+}
+
+.RelatedNews {
+  height: calc(100vh - 132px);
+  background-color: rgba(240, 240, 240, 0.6);
+}
+.RelatedNews .related-news-slider .related-news-image {
+  display: flex;
+  align-items: flex-end;
+  font-size: 1rem;
+  height: 16rem;
+  background-color: rgba(240, 240, 240, 0.6);
+  border: 1px solid #e2e8f0;
+  background-repeat: no-repeat;
+  width: 420px;
+  background-size: cover;
+  background-position: center;
+  --text-opacity: 1;
+  color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .human-res {
@@ -972,15 +1010,6 @@ footer .footer .contactUs textArea {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   position: relative;
-}
-.BrandsDetail .detail-image {
-  min-height: calc(100vh - 132px);
-}
-.BrandsDetail .detail-image > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 .BrandsDetail .detail-about,
 .BrandsDetail .detail-detail {

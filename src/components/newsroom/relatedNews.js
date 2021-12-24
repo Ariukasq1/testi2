@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
-import Link from "next/link";
 import Slider from "react-slick";
+import Link from "next/link";
 
-const NewsList = ({ data, cats, page }) => {
+const RelatedNews = ({ data, page }) => {
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     rows: 2,
     nextArrow: <SampleNextArrow />,
@@ -34,23 +34,17 @@ const NewsList = ({ data, cats, page }) => {
   };
 
   return (
-    <div className="newsList">
-      <div className="page-title">Newsroom</div>
-      <div className="catList">
-        {cats.map((cat, ind) => {
-          return <div key={ind}>{cat.name}</div>;
-        })}
-      </div>
-      <Slider {...settings} className="news-slider">
+    <div className="RelatedNews">
+      <Slider {...settings} className="related-news-slider">
         {data.map((news, ind) => {
           return (
             <Link
               key={ind}
-              href={"[categories]/[detail]"}
+              href={`/[categories]/[detail]`}
               as={`/${page}/${news.slug}`}
             >
               <div
-                className="newslist-image"
+                className="related-news-image"
                 style={{
                   backgroundImage: `url(${getData(news._embedded, "image")}})`,
                 }}
@@ -67,4 +61,4 @@ const NewsList = ({ data, cats, page }) => {
   );
 };
 
-export default NewsList;
+export default RelatedNews;

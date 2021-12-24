@@ -8,17 +8,35 @@ import FactSection from "../../components/IndCapPortfolio/FactSection";
 import Additional from "../../components/IndCapPortfolio/Additional";
 import HomeBrands from "../../components/home/HomeBrands";
 import BrandsDetail from "../../components/brands/BrandDetail";
+import NewsDetail from "../../components/newsroom/newsDetail";
+import RelatedNews from "../../components/newsroom/relatedNews";
+import CareerDetail from "../../components/careers/careerDetail";
+import HumanRes from "../../components/careers/HumanRes";
 
-const Detail = ({ slug, data, post }) => {
-  console.log(post, "============");
-  return (
-    <Layout>
-      <div className={`page ${slug}`}>
-        {slug === "brands" ? (
+const Detail = ({ slug, data, post, detail }) => {
+  const renderSwitch = (slug) => {
+    switch (slug) {
+      case "brands":
+        return <BrandsDetail post={post} />;
+
+      case "news":
+        return (
           <>
-            <BrandsDetail post={post} />
+            <NewsDetail post={post} />
+            <RelatedNews data={data} page={slug} />
           </>
-        ) : (
+        );
+
+      case "careers":
+        return (
+          <>
+            <HumanRes career={data} page={slug} />;
+            <CareerDetail post={post} />;
+          </>
+        );
+
+      default:
+        return (
           <>
             <FirstPart data={data} page={slug} />
             <div>
@@ -27,15 +45,19 @@ const Detail = ({ slug, data, post }) => {
               {post.acf.additional && <Additional post={post} />}
             </div>
           </>
-        )}
-      </div>
+        );
+    }
+  };
+  return (
+    <Layout>
+      <div className={`page ${slug}`}>{renderSwitch(slug)}</div>
     </Layout>
   );
 };
 
 Detail.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
-  console.log(context, "============");
+
   const slug = context.query.categories;
   const detail = context.query.detail;
 
@@ -53,7 +75,7 @@ Detail.getInitialProps = async (context) => {
 
   const data = await wp.posts().categories(catId.id).embed();
 
-  return { slug, data, post };
+  return { slug, data, post, detail };
 };
 
 export default Detail;

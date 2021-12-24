@@ -409,3 +409,13 @@ p {
   bottom: -40px;
   right: 15rem;
 }
+
+.detail-image {
+  min-height: calc(100vh - 132px);
+  > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
